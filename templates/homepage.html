@@ -1,5 +1,16 @@
 {% extends "layout.html" %}
 
 {% block content %}
+	<script>
+        let item = {{ item|tojson }}
+    </script>
+
 	<script type="text/javascript" src="{{ url_for('static', filename = 'homepage.js') }}"></script>
+	
+	<h2>{{ item.title }}</h2>
+	<div>{{ item.text }}</div>
+	<img id="home-img" src={{ item.image }} alt="home image">
+	
+	<button id="next-btn">Let's Learn More</button>
+	
 {% endblock %}

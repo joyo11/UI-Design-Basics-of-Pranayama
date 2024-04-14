@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<script>
+        let item = {{ item|tojson }}
+    </script>
+	
+	<script type="text/javascript" src="{{ url_for('static', filename = 'practice.js') }}"></script>
+	
+	<h4>{{ item.text }}</h4>
+	<div class="video">
+    <img src={{ item.placeholder }}>
+    <!-- <iframe width="560" height="315" src=
+	{{ item.media + "autoplay=1&amp;rel=0&amp;controls=0" }}
+	frameborder="0" allowfullscreen></iframe>-->
+	</div>
+	
+	<button id="prev-btn">back</button>
+	<button id="next-btn">next</button>
+	
+{% endblock %}
