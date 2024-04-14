@@ -10,11 +10,13 @@
 	<h4>{{ item.text }}</h4>
 	<div class="video">
     <img src={{ item.placeholder }}>
-    <!-- <iframe width="560" height="315" src=
-	{{ item.media + "autoplay=1&amp;rel=0&amp;controls=0" }}
-	frameborder="0" allowfullscreen></iframe>-->
 	</div>
 	
+	<iframe id="sound" width="0" height="0" 
+		src={{ item.media }} frameborder="0" controls="0">
+	</iframe>
+	
+	<button id="start-btn">start</button>
 	<button id="prev-btn">back</button>
 	<button id="next-btn">next</button>
 	
