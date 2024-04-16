@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (selectedOption && selectedOption.value === 'd') {
             // Answer is correct, update points and move to the next question
             updatePoints(2);
-            window.location.href = 'question2.html';
+            window.location.href = 'question2';
         } else {
             // Answer is incorrect, update points and stay on the current question
             updatePoints(0);
+            window.location.href = 'question2';
         }
     });
 

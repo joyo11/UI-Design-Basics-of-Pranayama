@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (selectedOption && selectedOption.value === 'b') {
             // Answer is correct, update points
             updatePoints(2);
+            window.location.href = 'question4';
         } else {
             // Answer is incorrect, update points
             updatePoints(0);
+            window.location.href = 'question4';
         }
         // Move to the next question
         alert('You have completed the quiz.');
