@@ -98,7 +98,7 @@ practice_data = {
         "placeholder": "https://icones.pro/wp-content/uploads/2022/02/icone-du-son-et-du-haut-parleur-orange.png",
         "media": "https://www.youtube.com/embed/0_CDMstFg7M?si=mAHfzKvDpyM6vpzF&",
         "prev": "/learn/3",
-        "next": "/quiz/1"
+        "next": "/question1"
     }
 }
 
