@@ -3,47 +3,56 @@ document.addEventListener('DOMContentLoaded', function() {
     const clearBtn = document.querySelector('.clear-btn');
     const backBtn = document.querySelector('.back-btn');
 
-    submitBtn.addEventListener('click', function() {
-        const selectedOption = document.querySelector('input[name="answer"]:checked');
-        if (selectedOption && selectedOption.value === 'b') {
-            // Answer is correct, update points
-            updatePoints(2);
-            window.location.href = 'question4';
-        } else {
-            // Answer is incorrect, update points
-            updatePoints(0);
-            window.location.href = 'question4';
+    // Ensure jQuery is loaded before using it
+    $(document).ready(function() {
+        // Function to get and display current points
+        function getCurrentPoints() {
+            $.get('/get_points', function(data) {
+                // Log current points to the console
+                console.log('Current points:', data.points);
+            });
         }
-        // Move to the next question
-        alert('You have completed the quiz.');
-        // You can redirect to a result page or any other page here
-    });
 
-    clearBtn.addEventListener('click', function() {
-        // Clear the selected option
-        const selectedOption = document.querySelector('input[name="answer"]:checked');
-        if (selectedOption) {
-            selectedOption.checked = false;
-        }
-    });
+        // Call the function to get and display current points when the document is ready
+        getCurrentPoints();
 
-    backBtn.addEventListener('click', function() {
-        // Navigate back to the previous question
-        window.history.back();
-    });
-
-    function updatePoints(points) {
-        // Send AJAX request to update points on the server
-        fetch('/add_points', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ points: points })
-        }).then(response => {
-            // Handle response if needed
-        }).catch(error => {
-            console.error('Error:', error);
+        // Event listener for submit button click
+        $('.submit-btn').click(function() {
+            const selectedOption = $('input[name="answer"]:checked');
+            if (selectedOption.val() === 'a') {
+                // Answer is correct, update points and move to the next question
+                updatePoints(2);
+                window.location.href = 'question4'; // Change to 'question3' if it's the next question
+            } else {
+                // Answer is incorrect, move to the next question without updating points
+                window.location.href = 'question4'; // Change to 'question3' if it's the next question
+            }
         });
-    }
+
+        // Event listener for clear button click
+        $('.clear-btn').click(function() {
+            // Clear the selected option
+            $('input[name="answer"]:checked').prop('checked', false);
+        });
+
+        // Function to update points
+        function updatePoints(points) {
+            console.log('Updating points with value:', points);
+            // Send AJAX request to update points on the server
+            $.ajax({
+                type: 'POST',
+                url: '/add_points',
+                contentType: 'application/json',
+                data: JSON.stringify({ points: points }),
+                success: function(response) {
+                    // Log current points to the console after updating
+                    getCurrentPoints();
+                    console.log('Points updated successfully. Current points:', response.points);
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+    });
 });

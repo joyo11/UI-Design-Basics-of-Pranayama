@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
-
+points = 0
 homepage_data = {
     "title": "Welcome to Basics of Pranayama!",
     "name": "Pranayama Homepage",
@@ -143,12 +143,20 @@ def question2():
 def question3():
     return render_template('question3.html')
 
+@app.route('/get_points')
+def get_points():
+    
+    return jsonify({'points': points})
+
 @app.route('/add_points', methods=['POST'])
 def add_points():
     global points
     data = request.json
+    print('Received request to add points with data:', data)
     points += data.get('points', 0)
+    print('Updated points:', points)
     return jsonify({'points': points})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
