@@ -131,5 +131,24 @@ def practice_item(item_id):
     
     return render_template('practice.html', item=item)
 
+@app.route('/question1')
+def question1():
+    return render_template('question1.html')
+
+@app.route('/question2')
+def question2():
+    return render_template('question2.html')
+
+@app.route('/question3')
+def question3():
+    return render_template('question3.html')
+
+@app.route('/add_points', methods=['POST'])
+def add_points():
+    global points
+    data = request.json
+    points += data.get('points', 0)
+    return jsonify({'points': points})
+
 if __name__ == '__main__':
     app.run(debug=True)
