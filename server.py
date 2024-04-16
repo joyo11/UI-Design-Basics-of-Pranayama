@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 homepage_data = {
     "title": "Welcome to Basics of Pranayama!",
+    "name": "Pranayama Homepage",
     "text": "Pranayama is the ancient art of conscious breathing, \
              where the rhythm of inhalation and exhalation becomes your dance with the universe. \
              Whether you're a seasoned yogi or a curious newcomer, Pranayama  \
