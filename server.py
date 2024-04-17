@@ -19,6 +19,7 @@ learn_data = {
     "1": { 
         "id": "1",
         "title": "Let’s start with Nadi Sodhana!",
+        "name": "Nadi Sodhana Learn Page",
         "intro": "Widely known as 'alternate nostril breathing', \
                   this pranayama helps to bring balance to the mind, body and soul.",
         "steps": ["Sit in a comfortable, cross-legged position", 
@@ -38,6 +39,7 @@ learn_data = {
         },
     "2": { 
         "id": "2",
+        "name": "Bhramari Pranayama Learn Page",
         "title": "Next Technique - Bhramari Pranayama!",
         "intro": "The name gives you a good idea of how the breath \
                   should be practised – it should sound like a humming bee!",
@@ -55,6 +57,7 @@ learn_data = {
         },
     "3": { 
         "id": "3",
+        "name": "Bhastrika Pranayama Learn Page",
         "title": "Final Technique - Bhastrika Pranayama!",
         "intro": "Here is how you can do the ‘bellows breath’:",
         "steps": ["Sit in (lotus) position  with eyes closed and spine straight", 
@@ -75,6 +78,7 @@ learn_data = {
 practice_data = {
     "1": {
         "id": "1",
+        "name": "Nadi Sodhana Practice Page",
         "text": "Practice Nadi Sodhana, inhaling and exhaling from your \
                           left and right nostrils when indicated by the countdown.",
         "placeholder": "https://clipart-library.com/img/1867023.jpg",
@@ -84,6 +88,7 @@ practice_data = {
         },
     "2": {
         "id": "2",
+        "name": "Bhramari Pranayama Practice Page",
         "text": "Practice Bhramari Pranayama for \
                           20 seconds alongside the timer.",
         "placeholder": "https://clipart-library.com/img/1867023.jpg",
@@ -93,6 +98,7 @@ practice_data = {
     },
     "3": {
         "id": "3",
+        "name": "Bhastrika Pranayama Practice Page",
         "text": "Practice Bhastrika Pranayama by trying to \
                           follow along with the rhythm you will hear.",
         "placeholder": "https://icones.pro/wp-content/uploads/2022/02/icone-du-son-et-du-haut-parleur-orange.png",
