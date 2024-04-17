@@ -148,6 +148,25 @@ def question2():
 @app.route('/question3')
 def question3():
     return render_template('question3.html')
+    
+@app.route('/question4')
+def question4():
+    return render_template('question4.html')
+
+@app.route('/question5', methods=['GET', 'POST'])
+def question5():
+    if request.method == 'POST':
+        score = request.args.get('score', type=int)
+        return redirect(url_for('finalscore', score=score))
+    score = request.args.get('score', type=int)
+    
+    return render_template('question5.html')
+
+
+@app.route('/finalscore', methods=['GET', 'POST'])
+def final_score():
+    return render_template('finalscore.html')
+
 
 @app.route('/get_points')
 def get_points():
