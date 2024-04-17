@@ -17,7 +17,7 @@
 	
 	{% for timestamp in item.timestamps %}
 		<div><iframe width="426.666666667" height="240" 
-			src= {{ item.video + "Start=" + timestamp[0] + "&end=" + timestamp[1] + ";rel=0&amp;showinfo=0"}}
+			src= {{ item.video + "start=" + timestamp[0] + "&end=" + timestamp[1] + ";rel=0&amp;showinfo=0"}}
 			frameborder="0">
 		</iframe></div>
 	{% endfor %}
