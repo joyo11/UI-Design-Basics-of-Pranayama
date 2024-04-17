@@ -82,7 +82,7 @@ practice_data = {
         "text": "Practice Nadi Sodhana, inhaling and exhaling from your \
                           left and right nostrils when indicated by the countdown.",
         "placeholder": "https://clipart-library.com/img/1867023.jpg",
-        "media": "https://www.youtube.com/embed/0_CDMstFg7M?si=mAHfzKvDpyM6vpzF&",
+        "media": "https://www.youtube.com/embed/YNMWS5cIAhY?si=tLWFPUKxSFY2CdeQ",
         "prev": "/learn/1",
         "next": "/learn/2"
         },
@@ -92,7 +92,7 @@ practice_data = {
         "text": "Practice Bhramari Pranayama for \
                           20 seconds alongside the timer.",
         "placeholder": "https://clipart-library.com/img/1867023.jpg",
-        "media": "https://www.youtube.com/embed/0_CDMstFg7M?si=mAHfzKvDpyM6vpzF&",
+        "media": "https://www.youtube.com/embed/aFiejt1dNUs?si=35lvjIlcht_xyPWI",
         "prev": "/learn/2",
         "next": "/learn/3"
     },
@@ -102,7 +102,7 @@ practice_data = {
         "text": "Practice Bhastrika Pranayama by trying to \
                           follow along with the rhythm you will hear.",
         "placeholder": "https://icones.pro/wp-content/uploads/2022/02/icone-du-son-et-du-haut-parleur-orange.png",
-        "media": "https://www.youtube.com/embed/0_CDMstFg7M?si=mAHfzKvDpyM6vpzF&",
+        "media": "https://www.youtube.com/embed/E67GYHE8ATY?si=oh6KANShRypSuNuI",
         "prev": "/learn/3",
         "next": "/question1"
     }
