@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<script type="text/javascript" src="{{ url_for('static', filename = 'interactive1.js') }}"></script>
+
+	<script>
+		let item = {{ item|tojson }}
+    </script>
+	
+	<style>
+        /* Custom Styles */
+        .arrow {
+            font-size: 40px; /* Adjust the size of the arrows */
+            cursor: pointer;
+        }
+        .active {
+            color: blue; /* Highlight color for active arrow */
+        }
+        .points {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        
+    </style>
+
+    <div class="container mt-5">
+        <a href={{ item.prev }} class="btn btn-secondary mb-3">
+            <i class="bi bi-arrow-left"></i> {{ item.back_btn_text }}
+        </a>
+        <h1 class="text-center">Question 4:</h1>
+        <div class="mb-3">{{ item.instructions }}</div>
+        <div class="mb-3">
+            <button id="left-btn" class="arrow left key">&larr;</button> <!-- Left arrow icon -->
+            <button id="right-btn" class="arrow right key">&rarr;</button> <!-- Right arrow icon -->
+        </div>
+        <button class="btn btn-primary start-btn">Start</button> <!-- Start button -->
+        <button class="btn btn-danger stop-btn">Stop</button> <!-- Stop button -->
+        <div class="points">Points: <span id="points">0</span></div> <!-- Points display -->
+        <div class="timer">Timer: <span id="timer">0</span> seconds</div> <!-- Timer display -->
+        <br>
+		<button class="btn btn-secondary clear-btn me-2">Clear</button> 
+        <button id='submit-btn' class="btn btn-primary">Submit <i class="bi bi-arrow-right"></i></button>
+    </div>
+
+{% endblock %}
+

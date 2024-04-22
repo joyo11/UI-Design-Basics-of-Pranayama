@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Event listener for submit button click
         $('.submit-btn').click(function() {
             const selectedOption = $('input[name="answer"]:checked');
-            if (selectedOption.val() === 'a') {
+            if (selectedOption.val() === item["correct"]) {
                 // Answer is correct, update points and move to the next question
                 updatePoints(2);
-                window.location.href = 'question4'; // Change to 'question3' if it's the next question
+                window.location.href = item["next"]; // Change to 'question3' if it's the next question
             } else {
                 // Answer is incorrect, move to the next question without updating points
-                window.location.href = 'question4'; // Change to 'question3' if it's the next question
+                window.location.href = item["next"]; // Change to 'question3' if it's the next question
             }
         });
 

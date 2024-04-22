@@ -20,7 +20,7 @@ function add_time(info){
 
 $(document).ready(function () {
 	var timestamp = Date.now();
-	add_time([timestamp, item]);
+	add_time([timestamp, item["name"]]);
 	
 	$("#next-btn").on("click", function () {
         window.location.href = item["next"];

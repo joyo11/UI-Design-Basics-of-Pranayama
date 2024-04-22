@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<style>
+	.retake-button {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+	</style>
+	
+	<script type="text/javascript" src="{{ url_for('static', filename = 'results.js') }}"></script>
+
+	<script>
+        let points = {{ points|tojson }}
+		let item = {{ item|tojson }}
+    </script>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Final Score</h1>
+        <div class="mt-3 text-center">
+            <p>Your score: <span id="score"></span></p>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <!-- Button to retake the quiz -->
+    <form action={{ item.retake_link }} class="retake-button">
+        <input type="submit" value="Retake Quiz">
+    </form>
+
+{% endblock %}

@@ -6,3 +6,23 @@
 body {
 	background-color: white;
 }
+
+#placeholder {
+	width: 30%;
+	height: auto;
+}
+
+.key {
+	border: 1px solid black;
+	background-color: lightgray;
+	border-radius: 4px;
+}
+
+.clicked {
+	background-color: orange;
+}
+
+.toclick {
+	color: blue;
+	border: 2px solid blue;
+}

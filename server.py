@@ -104,14 +104,75 @@ practice_data = {
         "placeholder": "https://icones.pro/wp-content/uploads/2022/02/icone-du-son-et-du-haut-parleur-orange.png",
         "media": "https://www.youtube.com/embed/E67GYHE8ATY?si=oh6KANShRypSuNuI",
         "prev": "/learn/3",
-        "next": "/question1"
+        "next": "/question/1"
     }
+}
+
+quiz_data = {
+    "1": {
+        "id":"1",
+        "name": "Question 1",
+        "question": "The exercise where you breathe in through one nostril \
+                     and exhale through the other is called ______________.",
+        "answers": ["Bhastrika Pranayama", "Nadi Shodhana", "Viparita Karani", "Anulom Vilom Pranayama"],
+        "correct": "b",
+        "prev": "/practice/3",
+        "next": "/question/2",
+        "back_btn_text": "Back to Learn"
+    },
+    "2": {
+        "id":"2",
+        "name": "Question 2",
+        "question": "The humming bee exercise is called ______________.",
+        "answers": ["Tadasana", "Paschimottanasana", "Bhramari Pranayama", "Nadi Shodhana"],
+        "correct": "c",
+        "prev": "/question/1",
+        "next": "/question/3",
+        "back_btn_text": "Back to Question 1"
+    },
+    "3": {
+        "id":"3",
+        "name": "Question 3",
+        "question": "The bellows breath exercise is called ______________.",
+        "answers": ["Bhastrika Pranayama", "Paschimottanasana", "Ujjayi Pranayama", "Anulom Vilom Pranayama"],
+        "correct": "a",
+        "prev": "/question/2",
+        "next": "/question/4",
+        "back_btn_text": "Back to Question 2"
+    }
+}
+
+interactive_data = {
+    "1": {
+        "id": "1",
+        "name": "Interactive Question 1",
+        "instructions": "Perform Nadi Sodhana for 20 seconds! \
+                         Hold down left arrow to breathe from the left side and right arrow to breathe from the right side. \
+                         Which arrow is blue indicates which side to breath from.",
+        "prev": "/question/3",
+        "next": "/question/5",
+        "back_btn_text": "Back to Question 3"
+    },
+    "2": {
+        "id": "2",
+        "name": "Interactive Question 2",
+        "instructions": "Perform Bhramari Pranayama for 25 seconds! Hold down space bar while humming. \
+                         Breath out when the text is blue, and take a break while it is not.",
+        "prev": "/question/4",
+        "next": "/results",
+        "back_btn_text": "Back to Question 4"
+    }
+}
+
+results_data = {
+    "name": "Results Page",
+    "retake_link": "/question/1"
 }
 
 timestamps = []
 # ROUTES
 @app.route('/')
-def layout():
+def home():
     global homepage_data
     return render_template('homepage.html', item=homepage_data)
     
@@ -136,37 +197,32 @@ def practice_item(item_id):
     item = practice_data[item_id]
     
     return render_template('practice.html', item=item)
-
-@app.route('/question1')
-def question1():
-    return render_template('question1.html')
-
-@app.route('/question2')
-def question2():
-    return render_template('question2.html')
-
-@app.route('/question3')
-def question3():
-    return render_template('question3.html')
     
-@app.route('/question4')
-def question4():
-    return render_template('question4.html')
-
-@app.route('/question5', methods=['GET', 'POST'])
-def question5():
-    if request.method == 'POST':
-        score = request.args.get('score', type=int)
-        return redirect(url_for('finalscore', score=score))
-    score = request.args.get('score', type=int)
+@app.route('/question/<item_id>')
+def question(item_id):
+    global interactive_data
+    global quiz_data
     
-    return render_template('question5.html')
+    if item_id == "4":
+        item = interactive_data["1"]
+    
+        return render_template('interactive1.html', item=item)
+        
+    elif item_id == "5":
+        item = interactive_data["2"]
+    
+        return render_template('interactive2.html', item=item)
+    
+    item = quiz_data[item_id]
 
-
-@app.route('/finalscore', methods=['GET', 'POST'])
-def final_score():
-    return render_template('finalscore.html')
-
+    return render_template('question.html', item=item)
+    
+@app.route('/results', methods=['GET', 'POST'])
+def results():
+    global points
+    global results_data
+    
+    return render_template('results.html', points=points, item=results_data)
 
 @app.route('/get_points')
 def get_points():

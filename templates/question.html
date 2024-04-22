@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	<script>
+        let item = {{ item|tojson }}
+    </script>
+	
+	<style>
+        /* Custom Styles */
+        .option-label {
+            cursor: pointer;
+        }
+    </style>
+	
+	<script type="text/javascript" src="{{ url_for('static', filename = 'question.js') }}"></script>
+
+    <div class="container mt-5">
+	
+		<a href={{ item.prev }} class="btn btn-secondary mb-3">
+            <i class="bi bi-arrow-left"></i> {{ item.back_btn_text }}
+        </a>
+	
+        <h1 class="text-center">{{ item.name }}:</h1>
+        <div class="mb-3">{{ item.question }}</div>
+        <div class="mb-3">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" id="optionA" value="a">
+                <label class="form-check-label option-label" for="optionA">a) {{ item.answers[0] }}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" id="optionB" value="b">
+                <label class="form-check-label option-label" for="optionB">b) {{ item.answers[1] }}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" id="optionC" value="c">
+                <label class="form-check-label option-label" for="optionC">c) {{ item.answers[2] }}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="answer" id="optionD" value="d">
+                <label class="form-check-label option-label" for="optionD">d) {{ item.answers[3] }}</label>
+            </div>
+        </div>
+        <button class="btn btn-primary submit-btn me-2">Submit</button>
+        <button class="btn btn-secondary clear-btn me-2">Clear</button>
+        <a href={{ item.next }} class="btn btn-primary">Next <i class="bi bi-arrow-right"></i></a>
+    </div>
+	
+{% endblock %}
