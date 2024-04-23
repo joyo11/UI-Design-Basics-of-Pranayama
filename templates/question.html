@@ -17,13 +17,9 @@
 
     <div class="container mt-5">
 	
-		<a href={{ item.prev }} class="btn btn-secondary mb-3">
-            <i class="bi bi-arrow-left"></i> {{ item.back_btn_text }}
-        </a>
-	
-        <h1 class="text-center">{{ item.name }}:</h1>
-        <div class="mb-3">{{ item.question }}</div>
-        <div class="mb-3">
+        <h1 class="text-center large mb-5">{{ item.name }}</h1>
+        <div class="mb-3 gray med">{{ item.question }}</div>
+        <div class="mb-5 gray small">
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="answer" id="optionA" value="a">
                 <label class="form-check-label option-label" for="optionA">a) {{ item.answers[0] }}</label>
@@ -41,9 +37,15 @@
                 <label class="form-check-label option-label" for="optionD">d) {{ item.answers[3] }}</label>
             </div>
         </div>
-        <button class="btn btn-primary submit-btn me-2">Submit</button>
-        <button class="btn btn-secondary clear-btn me-2">Clear</button>
-        <a href={{ item.next }} class="btn btn-primary">Next <i class="bi bi-arrow-right"></i></a>
+		<div class="buttons-line">
+			<button class="btn btn-primary submit-btn me-2 mr-2">Submit</button>
+			<button class="btn btn-secondary clear-btn me-2 ml-2">Clear</button>
+		</div>
+		
+		<div class="arrow-line mt-5">
+			<button id="prev-btn" class="btn left-arrow"></button>
+			<button id="next-btn" class="btn right-arrow"></button>
+		</div>
     </div>
 	
 {% endblock %}

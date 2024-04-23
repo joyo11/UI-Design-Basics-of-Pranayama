@@ -81,7 +81,7 @@ practice_data = {
         "name": "Nadi Sodhana Practice Page",
         "text": "Practice Nadi Sodhana, inhaling and exhaling from your \
                           left and right nostrils when indicated by the countdown.",
-        "placeholder": "https://clipart-library.com/img/1867023.jpg",
+        "placeholder": "https://cdn-icons-png.flaticon.com/512/5590/5590666.png",
         "media": "https://www.youtube.com/embed/YNMWS5cIAhY?si=tLWFPUKxSFY2CdeQ",
         "prev": "/learn/1",
         "next": "/learn/2"
@@ -91,7 +91,7 @@ practice_data = {
         "name": "Bhramari Pranayama Practice Page",
         "text": "Practice Bhramari Pranayama for \
                           20 seconds alongside the timer.",
-        "placeholder": "https://clipart-library.com/img/1867023.jpg",
+        "placeholder": "https://cdn-icons-png.flaticon.com/512/5590/5590666.png",
         "media": "https://www.youtube.com/embed/aFiejt1dNUs?si=35lvjIlcht_xyPWI",
         "prev": "/learn/2",
         "next": "/learn/3"
