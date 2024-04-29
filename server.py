@@ -6,11 +6,11 @@ points = 0
 homepage_data = {
     "title": "Welcome to Basics of Pranayama!",
     "name": "Pranayama Homepage",
-    "text": "Pranayama is the ancient art of conscious breathing, \
-             where the rhythm of inhalation and exhalation becomes your dance with the universe. \
-             Whether you're a seasoned yogi or a curious newcomer, Pranayama  \
-             invites you to take a deep dive into the ocean of tranquility within yourself. \
-             Get ready to inhale bliss, exhale stress, and discover the incredible power of your breath!",
+    "text": ["Pranayama is the ancient art of conscious breathing, \
+             where the rhythm of inhalation and exhalation becomes your dance with the universe.",
+             "Whether you're a seasoned yogi or a curious newcomer, Pranayama  \
+             invites you to take a deep dive into the ocean of tranquility within yourself.",
+             "Get ready to inhale bliss, exhale stress, and discover the incredible power of your breath!"],
     "image": "https://images.ctfassets.net/1tp0n7niw68j/26Veg94scTPnOiPsUiPML/737a87dc1cb3a0e20b717b41e0d97746/2._Bhastrika_pranayama__inhale___1_.jpg",
     "next": "/learn/1"
 }

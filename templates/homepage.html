@@ -6,11 +6,34 @@
     </script>
 
 	<script type="text/javascript" src="{{ url_for('static', filename = 'homepage.js') }}"></script>
+
+	<style type="text/css">
+		.dscptn_txt {
+			line-height: 2.0;
+			margin-top: 30px;
+		}
+		.sec_sep {
+			margin-top: 50px;
+		}
+	</style>
+
+	<div class="container mt-5">
+		<h1 class="text-center large">{{ item.title }}</h1>
+		<div class="row sec_sep">
+			<div class="col-md-6">
+
+				{% for step in item.text %}
+		            <h5 class="dscptn_txt gray">{{ step }}</h5>
+			    {% endfor %}
+
+				
+			</div>
+			<div class="col-md-6">
+				<img id="home-img" src={{ item.image }} alt="home image">
+			</div>
+		</div>
+	</div>
+	<div class="text-center sec_sep"><button id="next-btn" class="btn-primary">Let's Learn More</button></div>
 	
-	<h2>{{ item.title }}</h2>
-	<div>{{ item.text }}</div>
-	<img id="home-img" src={{ item.image }} alt="home image">
-	
-	<button id="next-btn" class="btn-primary">Let's Learn More</button>
 	
 {% endblock %}
