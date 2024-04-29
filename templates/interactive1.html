@@ -20,26 +20,38 @@
             font-size: 24px;
             margin-top: 10px;
         }
+		
+		.start-btn {
+			border-radius: 5px;
+			font-size: 40px;
+			padding: 0 12px;
+			margin-bottom: 18px;
+		}
         
     </style>
 
     <div class="container mt-5">
-        <a href={{ item.prev }} class="btn btn-secondary mb-3">
-            <i class="bi bi-arrow-left"></i> {{ item.back_btn_text }}
-        </a>
-        <h1 class="text-center">Question 4:</h1>
-        <div class="mb-3">{{ item.instructions }}</div>
-        <div class="mb-3">
+        <h1 class="text-center large mb-5">Question 4</h1>
+        <div class="mb-3 gray med">{{ item.instructions }}</div>
+        <div class="text-center mb-5">
+			<button class="btn btn-primary start-btn">
+				Start
+			</button> <!-- Start button -->
             <button id="left-btn" class="arrow left key">&larr;</button> <!-- Left arrow icon -->
             <button id="right-btn" class="arrow right key">&rarr;</button> <!-- Right arrow icon -->
+			<div class="gray med">Points: <span id="points">0</span></div> <!-- Points display -->
+			<div class="gray small">Timer: <span id="timer">0</span> seconds</div> <!-- Timer display -->
         </div>
-        <button class="btn btn-primary start-btn">Start</button> <!-- Start button -->
-        <button class="btn btn-danger stop-btn">Stop</button> <!-- Stop button -->
-        <div class="points">Points: <span id="points">0</span></div> <!-- Points display -->
-        <div class="timer">Timer: <span id="timer">0</span> seconds</div> <!-- Timer display -->
-        <br>
-		<button class="btn btn-secondary clear-btn me-2">Clear</button> 
-        <button id='submit-btn' class="btn btn-primary">Submit <i class="bi bi-arrow-right"></i></button>
+		
+		<div class="buttons-line">
+			<button id="submit-btn" class="btn btn-primary submit-btn me-2 mr-2">Submit</button>
+			<button class="btn btn-secondary clear-btn me-2 ml-2">Clear</button>
+		</div>
+		
+		<div class="arrow-line mt-5">
+			<button id="prev-btn" class="btn left-arrow"></button>
+			<button id="next-btn" class="btn right-arrow"></button>
+		</div>
     </div>
 
 {% endblock %}

@@ -143,8 +143,8 @@ quiz_data = {
 }
 
 interactive_data = {
-    "1": {
-        "id": "1",
+    "4": {
+        "id": "4",
         "name": "Interactive Question 1",
         "instructions": "Perform Nadi Sodhana for 20 seconds! \
                          Hold down left arrow to breathe from the left side and right arrow to breathe from the right side. \
@@ -153,8 +153,8 @@ interactive_data = {
         "next": "/question/5",
         "back_btn_text": "Back to Question 3"
     },
-    "2": {
-        "id": "2",
+    "5": {
+        "id": "5",
         "name": "Interactive Question 2",
         "instructions": "Perform Bhramari Pranayama for 25 seconds! Hold down space bar while humming. \
                          Breath out when the text is blue, and take a break while it is not.",
@@ -170,6 +170,15 @@ results_data = {
 }
 
 timestamps = []
+
+points_dict = {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0
+}
+
 # ROUTES
 @app.route('/')
 def home():
@@ -204,12 +213,12 @@ def question(item_id):
     global quiz_data
     
     if item_id == "4":
-        item = interactive_data["1"]
+        item = interactive_data["4"]
     
         return render_template('interactive1.html', item=item)
         
     elif item_id == "5":
-        item = interactive_data["2"]
+        item = interactive_data["5"]
     
         return render_template('interactive2.html', item=item)
     
@@ -232,9 +241,12 @@ def get_points():
 @app.route('/add_points', methods=['POST'])
 def add_points():
     global points
+    global points_dict
     data = request.json
     print('Received request to add points with data:', data)
-    points += data.get('points', 0)
+    #points += data.get('points', 0)
+    points_dict[data.get('id', 0)] = data.get('points', 0)
+    points = sum(points_dict.values())
     print('Updated points:', points)
     return jsonify({'points': points})
 

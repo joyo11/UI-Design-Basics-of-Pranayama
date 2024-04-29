@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 updatePoints(2);
                 window.location.href = item["next"]; // Change to 'question3' if it's the next question
             } else {
-                // Answer is incorrect, move to the next question without updating points
+				updatePoints(0);
+                // Answer is incorrect, move to the next and update points to 0 at id
                 window.location.href = item["next"]; // Change to 'question3' if it's the next question
             }
         });
@@ -37,13 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Function to update points
         function updatePoints(points) {
+			id = item["id"];
             console.log('Updating points with value:', points);
             // Send AJAX request to update points on the server
             $.ajax({
                 type: 'POST',
                 url: '/add_points',
                 contentType: 'application/json',
-                data: JSON.stringify({ points: points }),
+                data: JSON.stringify({ points: points, id:id}),
                 success: function(response) {
                     // Log current points to the console after updating
                     getCurrentPoints();

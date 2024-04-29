@@ -22,13 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	// Function to update points
 	function updatePoints(points) {
+		id = item["id"];
 		console.log('Updating points with value:', points);
 		// Send AJAX request to update points on the server
 		$.ajax({
 			type: 'POST',
 			url: '/add_points',
 			contentType: 'application/json',
-			data: JSON.stringify({ points: points }),
+			data: JSON.stringify({ points: points, id:id}),
 			success: function(response) {
 				// Log current points to the console after updating
 				getCurrentPoints();
@@ -101,6 +102,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function clearTimer() {
         clearInterval(timerInterval);
         // Reset timer and points
+		$('#right-btn').removeClass('toclick');
+		$('#right-btn').removeClass('clicked');
+		$('#left-btn').removeClass('toclick');
+		$('#left-btn').removeClass('clicked');
         seconds = 0;
         intervalsOfFive = 0;
         points = 0;
@@ -118,10 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
         pointsDisplay.textContent = points;
 		
         startTimer();
-    });
-
-    stopBtn.addEventListener('click', function() {
-        stopTimer();
     });
 
     clearBtn.addEventListener('click', function() {

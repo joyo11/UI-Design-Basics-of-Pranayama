@@ -11,17 +11,21 @@ function displayScore() {
 		}
     }
 	
-	updatePoints(-1*points);
+	updatePoints(0, "1");
+	updatePoints(0, "2");
+	updatePoints(0, "3");
+	updatePoints(0, "4");
+	updatePoints(0, "5");
 	
 	// Function to update points
-	function updatePoints(points) {
+	function updatePoints(points, id) {
 		console.log('Updating points with value:', points);
 		// Send AJAX request to update points on the server
 		$.ajax({
 			type: 'POST',
 			url: '/add_points',
 			contentType: 'application/json',
-			data: JSON.stringify({ points: points }),
+			data: JSON.stringify({ points: points, id:id}),
 			success: function(response) {
 				console.log('Points updated successfully. Current points:', response.points);
 			},
