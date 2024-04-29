@@ -18,7 +18,7 @@ homepage_data = {
 learn_data = {
     "1": { 
         "id": "1",
-        "title": "Let’s start with Nadi Sodhana!",
+        "title": "Nadi Sodhana",
         "name": "Nadi Sodhana Learn Page",
         "intro": "Widely known as 'alternate nostril breathing', \
                   this pranayama helps to bring balance to the mind, body and soul.",
@@ -31,7 +31,7 @@ learn_data = {
                   "Open the right nostril, exhale completely",
                   "Inhale through the right nostril, then close",
                   "Open the left, exhale completely",
-                  "This is one cycle; repeat 10 times"],
+                  "Repeat 10 times; this was one cycle"],
         "video": "https://www.youtube.com/embed/gWIt5OoQDv8?",
         "timestamps": [("37","55"), ("108","134")],
         "prev": "/",
@@ -40,13 +40,13 @@ learn_data = {
     "2": { 
         "id": "2",
         "name": "Bhramari Pranayama Learn Page",
-        "title": "Next Technique - Bhramari Pranayama!",
+        "title": "Bhramari Pranayama",
         "intro": "The name gives you a good idea of how the breath \
                   should be practised – it should sound like a humming bee!",
         "steps": ["Find a comfortable position", 
                   "Close your ears and eyes with your fingers and thumbs",
                   "Inhale deeply",
-                  "Then exhale slowly, making a buzzing sound like a bee",
+                  "Exhale slowly, making a buzzing sound like a bee",
                   "You can also make the sound 'om' if this is easier to imagine",
                   "Once you’ve finished the breath, you’ve completed a cycle",
                   "Continue for 5-10 minutes"],
@@ -58,11 +58,11 @@ learn_data = {
     "3": { 
         "id": "3",
         "name": "Bhastrika Pranayama Learn Page",
-        "title": "Final Technique - Bhastrika Pranayama!",
+        "title": "Bhastrika Pranayama",
         "intro": "Here is how you can do the ‘bellows breath’:",
         "steps": ["Sit in (lotus) position  with eyes closed and spine straight", 
                   "Inhale deeply through your nostrils",
-                  "Then exhale forcefully through your nostrils, using the diaphragm to 'pump'",
+                  "Exhale forcefully through your nostrils, using the diaphragm to 'pump'",
                   "Inhale and exhale forcibly about 10 times (or whatever feels comfortable)",
                   "Then take a deep inhale",
                   "Hold the breath in for as long as you can",
