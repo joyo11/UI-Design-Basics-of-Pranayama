@@ -7,22 +7,27 @@
 	
 	<script type="text/javascript" src="{{ url_for('static', filename = 'practice.js') }}"></script>
 	
-	<h4>{{ item.text }}</h4>
-	<div class="video">
-    <img src={{ item.placeholder }} id="placeholder">
-	</div>
 	
-	<iframe id="sound" width="0" height="0" 
-		src={{ item.media }} frameborder="0" allow="autoplay" controls="0">
-	</iframe>
-	
-	<div class="center">
-		<button id="start-btn" class="btn-primary">Start</button>
-	</div>
-	
-	<div class="arrow-line mt-5">
-		<button id="prev-btn" class="btn left-arrow"></button>
-		<button id="next-btn" class="btn right-arrow"></button>
+	<div class="container mt-5">
+		<div class="row">
+			<h4 class="col-md-7 large gray align-self-center">{{ item.text }}</h4>
+			<div class="video col-md-5">
+			<img src={{ item.placeholder }} id="placeholder">
+			</div>
+			
+			<iframe id="sound" width="0" height="0" 
+				src={{ item.media }} frameborder="0" allow="autoplay" controls="0">
+			</iframe>
+		</div>
+		
+		<div class="center">
+			<button id="start-btn" class="btn-primary">Start</button>
+		</div>
+		
+		<div class="arrow-line mt-5">
+			<button id="prev-btn" class="btn left-arrow"></button>
+			<button id="next-btn" class="btn right-arrow"></button>
+		</div>
 	</div>
 	
 {% endblock %}
