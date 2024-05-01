@@ -1,90 +1,153 @@
+
 {% extends "layout.html" %}
 
 {% block content %}
-	<script>
+    <script>
         let item = {{ item|tojson }}
     </script>
-	
-	<script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
 
-	<style>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
+
+    <style>
         /* Custom Styles */
         .sec_sep {
-			margin-top: 50px;
-		}
+            margin-top: 50px;
+        }
 
-		.orange_font {
-			color: orange;
-		}
-        
+        .orange_font {
+            color: orange;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        /* Ensure image container matches video dimensions */
+        .video-container {
+            width: 426.666666667px;
+            height: 240px;
+            overflow: hidden;
+        }
+
+         img {
+            width: 100%;
+            height: auto;
+        }
+		.center-img {
+            text-align: center;
+        }
+
+		@keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+		/* Apply fade-in animation to each step */
+		.fade-in-step {
+        opacity: 0; /* Initially hidden */
+    }
+
+    /* Delay subsequent steps */
+    {% for step in item.steps %}
+        .fade-in-step:nth-child({{ loop.index }}) {
+            animation: fade-in 3s ease forwards {{ loop.index * 3 }}s;
+        }
+    {% endfor %}
+
+	.fade-in-step-delayed {
+    opacity: 0; /* Initially hidden */
+}
+
+/* Apply fade-in animation to each step with a delay */
+{% for step in item.steps %}
+    {% if loop.index > 3 %}
+        .fade-in-step-delayed:nth-child({{ loop.index - 3 }}) {
+            animation: fade-in 3s ease forwards {{ loop.index * 3 + 1 }}s; /* Start 10 seconds after page load */
+        }
+    {% endif %}
+{% endfor %}
     </style>
 
     <div class="container mt-5">
-    	<h1 class="text-center large">{{ item.title }}</h1>
-    	<h6 class="text-center gray mb-5">{{ item.intro }}</h6>
+        <h1 class="text-center large">{{ item.title }}</h1>
+        <h6 class="text-center gray mb-5">{{ item.intro }}</h6>
 
-    	<div class="sec_sep">
-    		<h4 class="orange_font">Setup</h4>
-    	</div>
+        <div class="sec_sep {% if item.id <= "3" %}hide{% endif %}">
+            <h4 class="orange_font">Setup</h4>
+        </div>
 
-    	<div class="row">
-    		<div class="col-md-6">
-	    		<ol>
-				    {% for step in item.steps %}
-				        {% if loop.index <= 3 %}
-				            {% set words = step.split(' ') %}
-				            <li class="gray mb-5"><strong>{{ words[0] }}</strong> {{ ' '.join(words[1:]) }}</li>
-				        {% endif %}
-				    {% endfor %}
-				</ol>
-	    	</div>
-	    	<div class="col-md-6">
-	    		{% for timestamp in item.timestamps %}
-	    			{% if loop.index <= 1 %}
-						<div><iframe width="426.666666667" height="240" 
-							src= {{ item.video + "start=" + timestamp[0] + "&end=" + timestamp[1] + ";rel=0&amp;showinfo=0"}}
-							frameborder="0">
-						</iframe></div>
-					{% endif %}
-				{% endfor %}
-	    	</div>
-    	</div>
+		{% if item.id == "1" %}
+                    <div class="center-img">
+                        <img src="{{ item.image }}" alt="Image">
+                    </div>
+				{% endif %}
 
-    	<div class="sec_sep">
-    		<h4 class="orange_font">Execution</h4>
-    	</div>
+        <div class="row">
+            <div class="col-md-6">
+                <ol>
+                    {% for step in item.steps %}
+                        {% if loop.index <= 3 %}
+                            {% set words = step.split(' ') %}
+                            <li class="gray mb-5 fade-in-step"><strong>{{ words[0] }}</strong> {{ ' '.join(words[1:]) }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="col-md-6">
+					{% if item.id > "1" and item.id <= "3" %}
+                    <div class="img">
+                        <img src="{{ item.image }}" alt="Image">
+                    </div>
+                {% endif %}
+                
+                {% for timestamp in item.timestamps %}
+                    {% if loop.index <= 1 %}
+                        <div class="video-container">
+                            <iframe width="426.666666667" height="240"
+                                    src= {{ item.video + "start=" + timestamp[0] + "&end=" + timestamp[1] + ";rel=0&amp;showinfo=0"}}
+                                    frameborder="0">
+                            </iframe>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
 
-    	<div class="row">
-    		<div class="col-md-6">
-    			<ol start="4">
-				    {% for step in item.steps %}
-				        {% if loop.index > 3 %}
-				            {% set words = step.split(' ') %}
-				            <li class="gray mb-5"><strong>{{ words[0] }}</strong> {{ ' '.join(words[1:]) }}</li>
-				        {% endif %}
-				    {% endfor %}
-				</ol>
-    		</div>
-    		<div class="col-md-6">
-    			{% for timestamp in item.timestamps %}
-	    			{% if loop.index > 1 %}
-						<div><iframe width="426.666666667" height="240" 
-							src= {{ item.video + "start=" + timestamp[0] + "&end=" + timestamp[1] + ";rel=0&amp;showinfo=0"}}
-							frameborder="0">
-						</iframe></div>
-					{% endif %}
-				{% endfor %}
-    		</div>
-    	</div>
-    	
-    	<div class="arrow-line mt-5">
-			<button id="prev-btn" class="btn left-arrow"></button>
-			<button id="next-btn" class="btn right-arrow"></button>
-		</div>
+        <div class="sec_sep {% if item.id <= "3" %}hide{% endif %}">
+            <h4 class="orange_font">Execution</h4>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <ol start="4">
+                    {% for step in item.steps %}
+                        {% if loop.index > 3 %}
+                            {% set words = step.split(' ') %}
+                            <li class="gray mb-5 fade-in-step-delayed"><strong>{{ words[0] }}</strong> {{ ' '.join(words[1:]) }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="col-md-6">
+                {% for timestamp in item.timestamps %}
+                    {% if loop.index > 1 %}
+                        <div class="video-container">
+                            <iframe width="426.666666667" height="240"
+                                    src= {{ item.video + "start=" + timestamp[0] + "&end=" + timestamp[1] + ";rel=0&amp;showinfo=0"}}
+                                    frameborder="0">
+                            </iframe>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="arrow-line mt-5">
+            <button id="prev-btn" class="btn left-arrow"></button>
+            <button id="next-btn" class="btn right-arrow"></button>
+        </div>
     </div>
-	
-	
-	
-	
-	
-{% endblock %}
+	{% endblock %}

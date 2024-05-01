@@ -18,6 +18,44 @@ homepage_data = {
 learn_data = {
     "1": { 
         "id": "1",
+        "title": "What is Pranayama?",
+        "name": "What is Pranayama Learn Page",
+        "intro": "Pranayama: prana, which means life force or vital energy, and ayama, which means control or expansion. Together, pranayama refers to various breathing techniques or exercises practiced in yoga to control, regulate, and expand the breath and, by extension, the life force or vital energy within the body.",
+        "image": "https://agility-ortho.com/wp-content/uploads/2022/10/yoga-164923092416x9-1.jpg",
+        "prev": "/",
+        "next": "/learn/2"
+        },
+        "2": { 
+        "id": "2",
+        "title": "Why Practice Pranayama",
+        "name": "Why Practice Pranayama Learn Page",
+        "steps": ["Stress Reduction and Relaxation: Pranayama techniques, such as deep breathing and alternate nostril breathing, can help activate the parasympathetic nervous system, inducing a state of relaxation and reducing the body's stress response.", 
+                  "Improved Respiratory Health: Pranayama practices involve conscious control and manipulation of the breath, which can help improve respiratory function and lung capacity. By expanding lung capacity and increasing oxygen intake, pranayama techniques can enhance overall respiratory health, strengthen the respiratory muscles, and alleviate breathing difficulties.",
+                  "Enhanced Mind-Body Connection and Mental Clarity: Pranayama practices encourage mindful awareness of the breath and its connection to the mind and body. By focusing attention on the breath and regulating its rhythm, practitioners can cultivate greater self-awareness, mental clarity, and emotional stability. Regular pranayama practice can sharpen concentration, improve cognitive function, and promote a sense of inner peace and harmony.",
+                 ],
+        "image": "https://i.mscwlns.co/mosaic-wellness/image/upload/f_auto,w_1000,c_limit/v1648647977/BW%20BLOG/Untitled-design--41-.jpg",
+       
+        "prev": "/learn/1",
+        "next": "/learn/3"
+        },
+        "3": { 
+        "id": "3",
+        "title": "Overview of Techniques",
+        "name": "Overview of Techniques Learning Page",
+    
+        
+        "steps": ["Nadhi Sodhana: Nadi Shodhana, also known as alternate nostril breathing, is a pranayama technique in yoga involving the sequential inhalation and exhalation through alternate nostrils to balance the flow of energy in the body and calm the mind.", 
+                  "Bhramari Pranayama: Bhramari Pranayama is a yogic breathing technique where one inhales deeply and exhales while producing a humming sound, often likened to the buzzing of a bee, to induce a calming effect on the mind and nervous system",
+                  "Bhastrika Pranayama: Bhastrika Pranayama is a vigorous yogic breathing exercise involving rapid and forceful inhalations and exhalations to increase oxygen supply, energize the body, and clear the mind.",
+                 ],
+        "image": "https://kripalu.org/sites/default/files/pranayama_0.jpg",
+        
+        "prev": "/learn/2",
+        "next": "/practice/1"
+        },
+    
+    "4": { 
+        "id": "4",
         "title": "Nadi Sodhana",
         "name": "Nadi Sodhana Learn Page",
         "intro": "Widely known as 'alternate nostril breathing', \
@@ -34,11 +72,11 @@ learn_data = {
                   "Repeat 10 times; this was one cycle"],
         "video": "https://www.youtube.com/embed/gWIt5OoQDv8?",
         "timestamps": [("37","55"), ("108","134")],
-        "prev": "/",
+        "prev": "/learn/2",
         "next": "/practice/1"
         },
-    "2": { 
-        "id": "2",
+    "5": { 
+        "id": "5",
         "name": "Bhramari Pranayama Learn Page",
         "title": "Bhramari Pranayama",
         "intro": "The name gives you a good idea of how the breath \
@@ -55,8 +93,8 @@ learn_data = {
         "prev": "/practice/1",
         "next": "/practice/2"
         },
-    "3": { 
-        "id": "3",
+    "6": { 
+        "id": "6",
         "name": "Bhastrika Pranayama Learn Page",
         "title": "Bhastrika Pranayama",
         "intro": "Here is how you can do the ‘bellows breath’:",
@@ -83,8 +121,8 @@ practice_data = {
                           left and right nostrils when indicated by the countdown.",
         "placeholder": "https://cdn-icons-png.flaticon.com/512/5590/5590666.png",
         "media": "https://www.youtube.com/embed/YNMWS5cIAhY?si=tLWFPUKxSFY2CdeQ",
-        "prev": "/learn/1",
-        "next": "/learn/2"
+        "prev": "/learn/4",
+        "next": "/learn/5"
         },
     "2": {
         "id": "2",
@@ -93,8 +131,8 @@ practice_data = {
                           20 seconds alongside the timer.",
         "placeholder": "https://cdn-icons-png.flaticon.com/512/5590/5590666.png",
         "media": "https://www.youtube.com/embed/aFiejt1dNUs?si=35lvjIlcht_xyPWI",
-        "prev": "/learn/2",
-        "next": "/learn/3"
+        "prev": "/learn/5",
+        "next": "/learn/6"
     },
     "3": {
         "id": "3",
@@ -103,7 +141,7 @@ practice_data = {
                           follow along with the rhythm you will hear.",
         "placeholder": "https://icones.pro/wp-content/uploads/2022/02/icone-du-son-et-du-haut-parleur-orange.png",
         "media": "https://www.youtube.com/embed/E67GYHE8ATY?si=oh6KANShRypSuNuI",
-        "prev": "/learn/3",
+        "prev": "/learn/6",
         "next": "/question/1"
     }
 }
