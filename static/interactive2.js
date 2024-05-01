@@ -41,6 +41,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
     function startTimer() {
+		var newSource = $("#sound").attr('src').replace("&autoplay=0", "&autoplay=1");
+		$("#sound").attr('src', newSource );
+		
+		console.log("yo");
+		var videoURL = $('#sound').prop('src');
+		videoURL += "&autoplay=1";
+		$('#sound').prop('src',videoURL);
+		
         timerInterval = setInterval(function() {
             timerDisplay.textContent = seconds;
 			pointsDisplay.textContent = points;
@@ -78,6 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function stopTimer() {
+		var newSource = $("#sound").attr('src').replace("&autoplay=1", "&autoplay=0");
+		$("#sound").attr('src', newSource );
+		
         clearInterval(timerInterval);
         // Save points in localStorage
         // Alert the user with the current points
@@ -87,19 +98,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function clearTimer() {
+		var newSource = $("#sound").attr('src').replace("&autoplay=1", "&autoplay=0");
+		$("#sound").attr('src', newSource );
+		
         clearInterval(timerInterval);
         // Reset timer and points
-		$('#right-btn').removeClass('toclick');
-		$('#right-btn').removeClass('clicked');
-		$('#left-btn').removeClass('toclick');
-		$('#left-btn').removeClass('clicked');
+		$('#space-btn').removeClass('toclick');
+		$('#space-btn').removeClass('clicked');
         seconds = 0;
         intervalsOfFive = 0;
         points = 0;
         timerDisplay.textContent = seconds;
         pointsDisplay.textContent = points;
         // Update points immediately when timer is cleared
-        stopTimer();
     }
 
 

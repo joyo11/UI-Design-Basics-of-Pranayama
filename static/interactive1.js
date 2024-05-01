@@ -42,6 +42,15 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
     function startTimer() {
+		var newSource = $("#sound").attr('src').replace("&autoplay=0", "&autoplay=1");
+		$("#sound").attr('src', newSource );
+		
+		console.log("yo");
+		var videoURL = $('#sound').prop('src');
+		videoURL += "&autoplay=1";
+		$('#sound').prop('src',videoURL);
+		
+		isLeft = false;
         timerInterval = setInterval(function() {
 			timerDisplay.textContent = seconds;
 			pointsDisplay.textContent = points;
@@ -89,6 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function stopTimer() {
+		var newSource = $("#sound").attr('src').replace("&autoplay=1", "&autoplay=0");
+		$("#sound").attr('src', newSource );
+		
         clearInterval(timerInterval);
         // Save points in localStorage for question 4
         // Alert the user with the current points
@@ -100,6 +112,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function clearTimer() {
+		var newSource = $("#sound").attr('src').replace("&autoplay=1", "&autoplay=0");
+		$("#sound").attr('src', newSource );
+		
         clearInterval(timerInterval);
         // Reset timer and points
 		$('#right-btn').removeClass('toclick');

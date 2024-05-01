@@ -189,7 +189,8 @@ interactive_data = {
                          Which arrow is blue indicates which side to breath from.",
         "prev": "/question/3",
         "next": "/question/5",
-        "back_btn_text": "Back to Question 3"
+        "back_btn_text": "Back to Question 3",
+        "media": "https://www.youtube.com/embed/tNTDBQQaueM?si=669Bvv5nsAnEy9C6"
     },
     "5": {
         "id": "5",
@@ -198,7 +199,8 @@ interactive_data = {
                          Breath out when the text is blue, and take a break while it is not.",
         "prev": "/question/4",
         "next": "/results",
-        "back_btn_text": "Back to Question 4"
+        "back_btn_text": "Back to Question 4",
+        "media": "https://www.youtube.com/embed/dsp5qPFlEIQ?si=TCkuc7S4DM0_I0TP"
     }
 }
 
