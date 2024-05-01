@@ -51,7 +51,7 @@ learn_data = {
         "image": "https://kripalu.org/sites/default/files/pranayama_0.jpg",
         
         "prev": "/learn/2",
-        "next": "/practice/1"
+        "next": "/learn/4"
         },
     
     "4": { 
@@ -72,7 +72,7 @@ learn_data = {
                   "Repeat 10 times; this was one cycle"],
         "video": "https://www.youtube.com/embed/gWIt5OoQDv8?",
         "timestamps": [("37","55"), ("108","134")],
-        "prev": "/learn/2",
+        "prev": "/learn/3",
         "next": "/practice/1"
         },
     "5": { 
