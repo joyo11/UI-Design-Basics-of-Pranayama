@@ -54,6 +54,22 @@ body {
 	color: #515251;
 }
 
+.red {
+	background-color: red;
+}
+
+.red:hover {
+	background-color: #FF4646;
+}
+
+.green {
+	background-color: green;
+}
+
+.green:hover {
+	background-color: #0AAE12;
+}
+
 #placeholder {
 	width: 30%;
 	height: auto;

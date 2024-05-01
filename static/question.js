@@ -22,17 +22,26 @@ document.addEventListener('DOMContentLoaded', function() {
             if (selectedOption.val() === item["correct"]) {
                 // Answer is correct, update points and move to the next question
                 updatePoints(2);
-                window.location.href = item["next"]; // Change to 'question3' if it's the next question
+				$('#submit-btn').text("Correct");	
+				$("#submit-btn").removeClass("red");
+				$("#submit-btn").addClass("green");
+                // window.location.href = item["next"]; // Change to 'question3' if it's the next question
             } else {
 				updatePoints(0);
+				$('#submit-btn').text("Incorrect");
+				$("#submit-btn").removeClass("green");
+				$("#submit-btn").addClass("red");
                 // Answer is incorrect, move to the next and update points to 0 at id
-                window.location.href = item["next"]; // Change to 'question3' if it's the next question
+                // window.location.href = item["next"]; // Change to 'question3' if it's the next question
             }
         });
 
         // Event listener for clear button click
         $('.clear-btn').click(function() {
             // Clear the selected option
+			$("#submit-btn").removeClass("red");
+			$("#submit-btn").removeClass("green");
+			$('#submit-btn').text("Submit");	
             $('input[name="answer"]:checked').prop('checked', false);
         });
 
