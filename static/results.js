@@ -4,7 +4,7 @@ function displayScore() {
     const resultElement = document.getElementById('result');
     if (scoreElement && resultElement) {
 		scoreElement.textContent = points;
-        if (points >= 3) {
+        if (points >= 7) {
 		resultElement.textContent = "Congratulations! You passed the quiz.";
 		} else {
 			resultElement.textContent = "Sorry, you failed the quiz. Better luck next time.";

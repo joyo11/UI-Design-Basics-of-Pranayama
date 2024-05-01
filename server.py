@@ -156,7 +156,7 @@ interactive_data = {
     "5": {
         "id": "5",
         "name": "Interactive Question 2",
-        "instructions": "Perform Bhramari Pranayama for 25 seconds! Hold down space bar while humming. \
+        "instructions": "Perform Bhramari Pranayama for 30 seconds! Hold down space bar while humming. \
                          Breath out when the text is blue, and take a break while it is not.",
         "prev": "/question/4",
         "next": "/results",
