@@ -2,11 +2,30 @@
 
 {% block content %}
 	<style>
-	.retake-button {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-	}
+   
+    .retake {
+        right: 6%;
+        background-color: #fe9900;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 138px;
+        height: 47px;
+        font-size: 22px;
+        position: absolute;
+        top: 84px;
+        }
+    .retake:hover {
+        background-color:blue;
+    }
+    .h1, h1 {
+        font-size: 3.5rem;
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 22px;
+    }
 	</style>
 	
 	<script type="text/javascript" src="{{ url_for('static', filename = 'results.js') }}"></script>
@@ -26,7 +45,7 @@
 
     <!-- Button to retake the quiz -->
     <form action={{ item.retake_link }} class="retake-button">
-        <input type="submit" value="Retake Quiz">
+        <input type="submit" value="Retake Quiz" class="retake">
     </form>
 
 {% endblock %}

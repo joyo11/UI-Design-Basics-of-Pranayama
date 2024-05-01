@@ -6,25 +6,85 @@
     </script>
 	
 	<script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
+
+	<style>
+        /* Custom Styles */
+        .sec_sep {
+			margin-top: 50px;
+		}
+
+		.orange_font {
+			color: orange;
+		}
+        
+    </style>
+
+    <div class="container mt-5">
+    	<h1 class="text-center large">{{ item.title }}</h1>
+    	<h6 class="text-center gray mb-5">{{ item.intro }}</h6>
+
+    	<div class="sec_sep">
+    		<h4 class="orange_font">Setup</h4>
+    	</div>
+
+    	<div class="row">
+    		<div class="col-md-6">
+	    		<ol>
+				    {% for step in item.steps %}
+				        {% if loop.index <= 3 %}
+				            {% set words = step.split(' ') %}
+				            <li class="gray mb-5"><strong>{{ words[0] }}</strong> {{ ' '.join(words[1:]) }}</li>
+				        {% endif %}
+				    {% endfor %}
+				</ol>
+	    	</div>
+	    	<div class="col-md-6">
+	    		{% for timestamp in item.timestamps %}
+	    			{% if loop.index <= 1 %}
+						<div><iframe width="426.666666667" height="240" 
+							src= {{ item.video + "start=" + timestamp[0] + "&end=" + timestamp[1] + ";rel=0&amp;showinfo=0"}}
+							frameborder="0">
+						</iframe></div>
+					{% endif %}
+				{% endfor %}
+	    	</div>
+    	</div>
+
+    	<div class="sec_sep">
+    		<h4 class="orange_font">Execution</h4>
+    	</div>
+
+    	<div class="row">
+    		<div class="col-md-6">
+    			<ol start="4">
+				    {% for step in item.steps %}
+				        {% if loop.index > 3 %}
+				            {% set words = step.split(' ') %}
+				            <li class="gray mb-5"><strong>{{ words[0] }}</strong> {{ ' '.join(words[1:]) }}</li>
+				        {% endif %}
+				    {% endfor %}
+				</ol>
+    		</div>
+    		<div class="col-md-6">
+    			{% for timestamp in item.timestamps %}
+	    			{% if loop.index > 1 %}
+						<div><iframe width="426.666666667" height="240" 
+							src= {{ item.video + "start=" + timestamp[0] + "&end=" + timestamp[1] + ";rel=0&amp;showinfo=0"}}
+							frameborder="0">
+						</iframe></div>
+					{% endif %}
+				{% endfor %}
+    		</div>
+    	</div>
+    	
+    	<div class="arrow-line mt-5">
+			<button id="prev-btn" class="btn left-arrow"></button>
+			<button id="next-btn" class="btn right-arrow"></button>
+		</div>
+    </div>
 	
-	<h2>{{ item.title }}</h2>
-	<h4>{{ item.intro }}</h4>
-	<ol>
-	{% for step in item.steps %}
-        <li>{{ step }}</li>
-	{% endfor %}
-	</ol>
 	
-	{% for timestamp in item.timestamps %}
-		<div><iframe width="426.666666667" height="240" 
-			src= {{ item.video + "start=" + timestamp[0] + "&end=" + timestamp[1] + ";rel=0&amp;showinfo=0"}}
-			frameborder="0">
-		</iframe></div>
-	{% endfor %}
 	
-	<div class="arrow-line mt-5">
-		<button id="prev-btn" class="btn left-arrow"></button>
-		<button id="next-btn" class="btn right-arrow"></button>
-	</div>
+	
 	
 {% endblock %}
