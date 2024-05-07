@@ -118,7 +118,7 @@ practice_data = {
         "id": "1",
         "name": "Nadi Sodhana Practice Page",
         "text": "Practice Nadi Sodhana, inhaling and exhaling from your \
-                          left and right nostrils when indicated by the countdown.",
+                          left and right nostrils for 5 seconds when indicated by the timer.",
         "placeholder": "https://cdn-icons-png.flaticon.com/512/5590/5590666.png",
         "media": "https://www.youtube.com/embed/YNMWS5cIAhY?si=tLWFPUKxSFY2CdeQ",
         "prev": "/learn/4",
