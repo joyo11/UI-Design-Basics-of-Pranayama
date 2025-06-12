@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
+
 points = 0
 homepage_data = {
     "title": "Welcome to Basics of Pranayama!",
@@ -218,7 +219,6 @@ points_dict = {
     "4": 0,
     "5": 0
 }
-
 # ROUTES
 @app.route('/')
 def home():
@@ -289,7 +289,5 @@ def add_points():
     points = sum(points_dict.values())
     print('Updated points:', points)
     return jsonify({'points': points})
-
-
 if __name__ == '__main__':
     app.run(debug=True)
