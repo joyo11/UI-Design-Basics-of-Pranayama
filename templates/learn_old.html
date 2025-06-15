@@ -6,15 +6,15 @@
     </script>
 	
 	<script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
-	
 	<h2>{{ item.title }}</h2>
 	<h4>{{ item.intro }}</h4>
+
 	<ol>
 	{% for step in item.steps %}
         <li>{{ step }}</li>
 	{% endfor %}
 	</ol>
-	
+
 	{% for timestamp in item.timestamps %}
 		<div><iframe width="426.666666667" height="240" 
 			src= {{ item.video + "start=" + timestamp[0] + "&end=" + timestamp[1] + ";rel=0&amp;showinfo=0"}}
