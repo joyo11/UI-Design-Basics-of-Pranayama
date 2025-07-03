@@ -15,7 +15,6 @@ homepage_data = {
     "image": "https://images.ctfassets.net/1tp0n7niw68j/26Veg94scTPnOiPsUiPML/737a87dc1cb3a0e20b717b41e0d97746/2._Bhastrika_pranayama__inhale___1_.jpg",
     "next": "/learn/1"
 }
-
 learn_data = {
     "1": { 
         "id": "1",
@@ -237,14 +236,12 @@ def add_time():
 def learn_item(item_id):
     global learn_data
     item = learn_data[item_id]
-    
     return render_template('learn.html', item=item)
     
 @app.route('/practice/<item_id>')
 def practice_item(item_id):
     global practice_data
     item = practice_data[item_id]
-    
     return render_template('practice.html', item=item)
     
 @app.route('/question/<item_id>')
